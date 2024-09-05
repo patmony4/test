@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main class="flex gap-5 flex-col justify-center items-center h-screen">
+        <img src="./image/tenor.gif" alt="" id="image" class="w-[300px]">
+        <h3 class="text-5xl font-boid text-center" id="title">do you love me</h3>
+        <div class="flex gap-5">
+            <button type="button" id="btnyes" class="btn text-2xl rounded-lg py-2 bg-pink-700 text-white">Yes</button>
+            <button type="button" id="btnNo" class="btn text-2xl rounded-lg py-2 bg-blue-700 text-white">No</button>
+        </div>
+        <!-- <audio src="./image/cry-banana-cat.mp3"></audio> -->
+         <img src="" alt="">
+    </main>
+    <!-- Tailwin css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</body>
+<script>
+    let imgs=document.querySelector('#image');
+    let tit=document.querySelector('#title');
+    let btn_yes=document.querySelector('#btnyes');
+    let btn_no=document.querySelector('#btnNo');
+    let happysound=new Audio('./image/happy-happy-happy-cat.mp3');
+    let sadsound=new Audio('./image/cry-banana-cat.mp3');
+
+    btn_yes.addEventListener('click',()=>{
+        imgs.src="./image/jumping-gatito.gif";
+        tit.innerHTML="Aww I love you too...";
+        happysound.play();
+        sadsound.pause();
+        happysound.loop=true;
+    })
+
+    let btnyesscre=1;
+    let btnnoscre=1;
+    
+    btn_no.addEventListener('click',()=>{
+        imgs.src="./image/icegif-152.gif";
+        tit.innerHTML="Get away form me...";
+        happysound.pause();
+        sadsound.play();
+        sadsound.loop=true;
+        btnnoscre-=0.1;
+        btnyesscre+=1;
+        btn_no.style.transform=`scale(${btnnoscre})`;
+        btn_yes.style.transform=`scale(${btnyesscre})`;
+    })
+    
+</script>
+</html>
